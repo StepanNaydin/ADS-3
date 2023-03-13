@@ -7,13 +7,10 @@ int cbinsearch(int* arr, int size, int value) {
     while (1) {
         if (arr[(size + nach) / 2] > value) {
             size = (size + nach) / 2;
-        }
-        else if (arr[(size + nach) / 2] < value) 
-        {
+        } else if (arr[(size + nach) / 2] < value) {
             nach = (size + nach) / 2;
         }
-        else 
-        {
+        else {
             count++;
             for (int q = 1;; ++q) {
                 if ((size + nach) / 2 == 0) {
@@ -21,9 +18,7 @@ int cbinsearch(int* arr, int size, int value) {
                 }
                 if (arr[(size + nach) / 2 + q] == value) {
                     count++;
-                }
-                else 
-                {
+                } else {
                     break;
                 }
             }
@@ -33,9 +28,7 @@ int cbinsearch(int* arr, int size, int value) {
                 }
                 if (arr[(size + nach) / 2 + q] == value) {
                     count++;
-                }
-                else 
-                {
+                } else {
                     break;
                 }
             }
