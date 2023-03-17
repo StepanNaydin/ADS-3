@@ -28,6 +28,8 @@ int cbinsearch(int* arr, int size, int value) {
                 }
             }
             break;
+        } else if (size - nach == 1) {
+            break;
         } else if (arr[(size + nach) / 2] > value) {
             size = (size + nach) / 2;
         } else if (arr[(size + nach) / 2] < value) {
