@@ -5,12 +5,8 @@ int cbinsearch(int* arr, int size, int value) {
     int count = 0;
     int sizee = size;
     while (1) {
-        if (arr[(size + nach) / 2] > value) {
-            size = (size + nach) / 2;
-        } else if (arr[(size + nach) / 2] < value) {
-            nach = (size + nach) / 2;
-        }
-        else {
+        std::cout << nach << " " << size<<" "<< (size + nach) / 2 <<" "<<arr[(size + nach) / 2]<<"=?="<<value<< std::endl;
+        if (arr[(size + nach) / 2] == value) {
             count++;
             for (int q = 1;; ++q) {
                 if ((size + nach) / 2 == 0) {
@@ -18,7 +14,8 @@ int cbinsearch(int* arr, int size, int value) {
                 }
                 if (arr[(size + nach) / 2 + q] == value) {
                     count++;
-                } else {
+                }
+                else {
                     break;
                 }
             }
@@ -28,11 +25,18 @@ int cbinsearch(int* arr, int size, int value) {
                 }
                 if (arr[(size + nach) / 2 + q] == value) {
                     count++;
-                } else {
+                }
+                else {
                     break;
                 }
             }
             break;
+        }
+        else if (arr[(size + nach) / 2] > value) {
+            size = (size + nach) / 2;
+        }
+        else if (arr[(size + nach) / 2] < value) {
+            nach = (size + nach) / 2;
         }
     }
     return count;
